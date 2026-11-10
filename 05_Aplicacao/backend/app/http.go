@@ -24,7 +24,11 @@ func connectPostgres() (*gorm.DB, error) {
 	if dsn == "" {
 		return nil, fmt.Errorf("DATABASE_URL environment variable is not set")
 	}
-	return gorm.Open(postgres.Open(dsn), &gorm.Config{
+	dialector := postgres.New(postgres.Config{
+		DSN:                  dsn,
+		PreferSimpleProtocol: true,
+	})
+	return gorm.Open(dialector, &gorm.Config{
 		Logger: logger.New(log.New(os.Stdout, "\n", log.LstdFlags), logger.Config{
 			SlowThreshold: 2 * time.Minute,
 			LogLevel:      logger.Warn,
