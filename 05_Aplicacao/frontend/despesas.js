@@ -1,4 +1,4 @@
-const API_URL = 'http://127.0.0.1:8080/graphql';
+const API_URL = window.APP_CONFIG?.API_URL || 'http://127.0.0.1:8080/graphql';
 const NOMES_MESES = [
     'Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho',
     'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'
