@@ -5,7 +5,7 @@ import (
 	"net/http"
 	"sync"
 
-	"legisanalytica/internal/app"
+	"legisanalytica/app"
 )
 
 var (

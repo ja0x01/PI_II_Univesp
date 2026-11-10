@@ -6,7 +6,7 @@ import (
 	"net/http"
 	"time"
 
-	"legisanalytica/internal/app"
+	"legisanalytica/app"
 )
 
 const serverPort = ":8080"
